@@ -4,7 +4,7 @@ A WordPress theme for programmers.
 
 ### Based on Underscores
 
-Download:https://underscores.me/
+Download: https://underscores.me/
 
 ### Legal stuff
 
