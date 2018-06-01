@@ -1,0 +1,33 @@
+.footer {
+    font-size: 1.25em;
+    a {
+        color: $white;
+        text-decoration: none;
+        opacity: 0.5;
+        &:hover {
+            transition: opacity 1s ease;
+            opacity: 1;
+            text-decoration: underline;
+        }
+    }
+    &__top, &__bottom {
+        padding: 2.8em;
+        &-content {
+            margin: 0 auto;
+            color: $white;
+            max-width: 50em;
+            &-intro {
+                margin-bottom: 1em;
+                color: $grey2;
+            }
+        }
+    }
+
+    &__top {
+        background-color: $black;
+    }
+
+    &__bottom {
+        background-color: $grey3;
+    }
+}

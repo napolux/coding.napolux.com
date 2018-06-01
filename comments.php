@@ -1,75 +1,41 @@
-<?php
-/**
- * The template for displaying comments
- *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package coding.napolux.com
- */
-
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
- */
-if ( post_password_required() ) {
-	return;
-}
-?>
-
-<div id="comments" class="comments-area">
-
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
-		?>
-		<h2 class="comments-title">
-			<?php
-			$coding_napolux_com_comment_count = get_comments_number();
-			if ( '1' === $coding_napolux_com_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'coding-napolux-com' ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			} else {
-				printf( // WPCS: XSS OK.
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $coding_napolux_com_comment_count, 'comments title', 'coding-napolux-com' ) ),
-					number_format_i18n( $coding_napolux_com_comment_count ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
-
-		<?php the_comments_navigation(); ?>
-
-		<ol class="comment-list">
-			<?php
-			wp_list_comments( array(
-				'style'      => 'ol',
-				'short_ping' => true,
-			) );
-			?>
-		</ol><!-- .comment-list -->
-
-		<?php
-		the_comments_navigation();
-
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'coding-napolux-com' ); ?></p>
-			<?php
-		endif;
-
-	endif; // Check for have_comments().
-
-	comment_form();
-	?>
-
-</div><!-- #comments -->
+<?php if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) return; ?>
+<section id="comments">
+    <?php
+    if (have_comments()) :
+        global $comments_by_type;
+        $comments_by_type = &separate_comments($comments);
+        if (!empty($comments_by_type['comment'])) :
+            ?>
+            <section id="comments-list" class="comments">
+                <h3 class="comments-title"><?php comments_number(); ?></h3>
+                <?php if (get_comment_pages_count() > 1) : ?>
+                    <nav id="comments-nav-above" class="comments-navigation" role="navigation">
+                        <div class="paginated-comments-links"><?php paginate_comments_links(); ?></div>
+                    </nav>
+                <?php endif; ?>
+                <ul>
+                    <?php wp_list_comments('type=comment'); ?>
+                </ul>
+                <?php if (get_comment_pages_count() > 1) : ?>
+                    <nav id="comments-nav-below" class="comments-navigation" role="navigation">
+                        <div class="paginated-comments-links"><?php paginate_comments_links(); ?></div>
+                    </nav>
+                <?php endif; ?>
+            </section>
+            <?php
+        endif;
+        if (!empty($comments_by_type['pings'])) :
+            $ping_count = count($comments_by_type['pings']);
+            ?>
+            <section id="trackbacks-list" class="comments">
+                <h3 class="comments-title"><?php echo '<span class="ping-count">' . $ping_count . '</span> ' . ($ping_count > 1 ? __('Trackbacks', 'cn') : __('Trackback', 'cn')); ?></h3>
+                <ul>
+                    <?php wp_list_comments('type=pings&callback=cn_custom_pings'); ?>
+                </ul>
+            </section>
+            <?php
+        endif;
+    endif;
+    if (comments_open()) comment_form();
+    ?>
+</section>

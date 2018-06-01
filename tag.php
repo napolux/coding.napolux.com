@@ -1,12 +1,12 @@
 <?php get_header(); ?>
     <section id="content" role="main">
+        <header class="header">
+            <h1 class="entry-title"><?php _e('Tag Archives: ', 'cn'); ?><?php single_tag_title(); ?></h1>
+        </header>
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <?php get_template_part('entry'); ?>
-            <?php if (!post_password_required()) comments_template('', true); ?>
         <?php endwhile; endif; ?>
-        <footer class="footer">
-            <?php get_template_part('nav', 'below-single'); ?>
-        </footer>
+        <?php get_template_part('nav', 'below'); ?>
     </section>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

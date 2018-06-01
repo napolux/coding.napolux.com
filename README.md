@@ -2,9 +2,10 @@
 
 A WordPress theme for programmers.
 
-### Based on Underscores
+### Based on BlankSlate WordPress Theme
 
-Download: https://underscores.me/
+Demo: http://wp-themes.com/blankslate/
+Download: http://wordpress.org/themes/blankslate
 
 ### Legal stuff
 
