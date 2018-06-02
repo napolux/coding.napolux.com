@@ -1,0 +1,32 @@
+@import "normalize";
+@import "fonts";
+@import "variables";
+@import "header";
+@import "footer";
+
+* {
+    outline: none;
+}
+
+.serif {
+    font-family: 'Calluna-Regular', georgia, times;
+}
+
+.sans {
+    font-family: 'CallunaSansRegular', arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Calluna-Regular', georgia, times;
+    margin: 0;
+}
+
+body {
+    line-height: 2em;
+}
+
+// content
+.content {
+    margin: 0 auto;
+    max-width: 50em;
+}
