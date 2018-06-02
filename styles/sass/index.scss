@@ -1,6 +1,7 @@
 @import "normalize";
 @import "fonts";
 @import "colors";
+@import "header";
 @import "footer";
 
 * {
@@ -22,4 +23,10 @@ h1,h2,h3,h4,h5,h6 {
 
 body {
     line-height: 2em;
+}
+
+// content
+.content {
+    margin: 0 auto;
+    max-width: 50em;
 }

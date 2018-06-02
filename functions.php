@@ -87,7 +87,7 @@ function get_random_post() {
     query_posts($args);
 
     if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <h2><?php the_title(); ?></h2>
+        <h2><a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><?php the_title(); ?></a></h2>
         <?php the_excerpt(); ?> <a href="<?php the_permalink() ?>" title="<?php the_title() ?>">Read more...</a>
     <?php endwhile; endif; wp_reset_query();
 }

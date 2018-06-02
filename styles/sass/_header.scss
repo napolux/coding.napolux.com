@@ -1,0 +1,27 @@
+body {
+    border-top: 12px solid #EA2027;
+}
+
+.header {
+    color: $grey3;
+    padding: 2.8em;
+
+    &__content {
+        font-size: 1.25em;
+        h1, h2 {
+            font-size: 3em;
+            color: $grey3;
+        }
+
+        h1, h2 {
+            line-height: 1.05em;
+        }
+
+        p {
+            line-height: 1.10em;
+            font-size: 2em;
+            color: $grey2;
+            margin: 0;
+        }
+    }
+}

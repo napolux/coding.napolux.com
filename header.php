@@ -8,22 +8,15 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
-    <header id="header" role="banner">
-        <section id="branding">
-            <div id="site-title"><?php if (is_front_page() || is_home() || is_front_page() && is_home()) {
-                    echo '<h1>';
-                } ?><a href="<?php echo esc_url(home_url('/')); ?>"
-                       title="<?php echo esc_html(get_bloginfo('name')); ?>"
-                       rel="home"><?php echo esc_html(get_bloginfo('name')); ?></a><?php if (is_front_page() || is_home() || is_front_page() && is_home()) {
-                    echo '</h1>';
-                } ?></div>
-            <div id="site-description"><?php bloginfo('description'); ?></div>
-        </section>
-        <nav id="menu" role="navigation">
-            <div id="search">
-                <?php get_search_form(); ?>
-            </div>
-            <?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
-        </nav>
+    <header id="header" class="header serif" role="banner">
+        <div class="header__content content">
+            <?php if(is_home()) { ?>
+                <h1><?php echo esc_html(get_bloginfo('name')); ?></h1>
+                <p><?php bloginfo('description'); ?></p>
+            <?php } else { ?>
+                <h2><?php echo esc_html(get_bloginfo('name')); ?></h2>
+                <p><?php bloginfo('description'); ?></p>
+            <?php } ?>
+        </div>
     </header>
     <div id="container">

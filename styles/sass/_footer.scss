@@ -13,12 +13,9 @@
     &__top, &__bottom {
         padding: 2.8em;
         &-content {
-            margin: 0 auto;
             color: $white;
-            max-width: 50em;
             &-intro {
                 margin-bottom: 1em;
-                color: $grey2;
             }
         }
     }
