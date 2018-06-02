@@ -1,0 +1,38 @@
+.loop {
+    &__post {
+        margin-bottom: 3em;
+        &-date {
+            color: $grey1;
+            margin-bottom: 0.333em;
+            font-weight: bold;
+        }
+        &-title {
+            font-size: 2em;
+            text-transform: capitalize;
+            a {
+                color: $onlyColor;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        &-excerpt {
+            color: $grey3;
+        }
+        &__meta {
+            &-categories, &-tags {
+                color: $grey2;
+            }
+            a {
+                color: $grey1;
+                text-decoration: none;
+                font-weight: bold;
+                &:hover {
+                    text-decoration: underline;
+                    color: $onlyColor;
+                }
+            }
+        }
+    }
+}

@@ -1,16 +1,10 @@
 body {
-    border-top: 12px solid $line;
+    border-top: 12px solid $onlyColor;
 }
 
 .header {
     color: $grey3;
-    padding: $desktopPadding;
-    @include breakpoint($xs) {
-        padding: $mobilePadding;
-    }
-
     &__content {
-        font-size: 1.25em;
         h1, h2 {
             font-size: 3em;
             color: $grey3;

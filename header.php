@@ -7,8 +7,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div id="wrapper" class="hfeed">
-    <header id="header" class="header serif" role="banner">
+    <header id="header" class="header wrapper serif" role="banner">
         <div class="header__content content">
             <?php if(is_home()) { ?>
                 <h1><?php echo esc_html(get_bloginfo('name')); ?></h1>
@@ -19,4 +18,3 @@
             <?php } ?>
         </div>
     </header>
-    <div id="container">

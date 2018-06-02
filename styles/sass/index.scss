@@ -2,6 +2,7 @@
 @import "fonts";
 @import "variables";
 @import "header";
+@import "loop";
 @import "footer";
 
 * {
@@ -25,8 +26,18 @@ body {
     line-height: 2em;
 }
 
-// content
-.content {
-    margin: 0 auto;
-    max-width: 50em;
+
+// wrapper
+.wrapper {
+    padding: $desktopPadding;
+    @include breakpoint($xs) {
+        padding: $mobilePadding;
+    }
+
+    // content
+    .content {
+        margin: 0 auto;
+        max-width: 50em;
+        font-size: 1.25em;
+    }
 }

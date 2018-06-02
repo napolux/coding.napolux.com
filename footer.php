@@ -1,6 +1,5 @@
-</div><!-- container -->
 <footer id="footer" class="footer sans" role="contentinfo">
-    <div class="footer__top">
+    <div class="footer__top wrapper">
         <div class="footer__top-content content">
             <h6 class="sans footer__top-content-intro">MORE WORDS...</h6>
             <?php
@@ -12,7 +11,7 @@
             ?>
         </div>
     </div>
-    <div class="footer__bottom">
+    <div class="footer__bottom wrapper">
         <div class="footer__bottom-content content">
             <h2>About me</h2>
             <p>I'm Francesco, a programmer. Somebody call me <strong>Napo</strong> or <strong>Napolux</strong>.
@@ -23,7 +22,6 @@
         </div>
     </div>
 </footer>
-</div><!-- wrapper -->
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -1,20 +1,12 @@
 .footer {
-    font-size: 1.25em;
     a {
-        color: $white;
+        color: $onlyColor;
         text-decoration: none;
-        opacity: 0.5;
         &:hover {
-            transition: opacity 1s ease;
-            opacity: 1;
             text-decoration: underline;
         }
     }
     &__top, &__bottom {
-        padding: $desktopPadding;
-        @include breakpoint($xs) {
-            padding: $mobilePadding;
-        }
         &-content {
             color: $white;
             &-intro {
