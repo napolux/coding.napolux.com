@@ -1,10 +1,13 @@
 body {
-    border-top: 12px solid #EA2027;
+    border-top: 12px solid $line;
 }
 
 .header {
     color: $grey3;
-    padding: 2.8em;
+    padding: $desktopPadding;
+    @include breakpoint($xs) {
+        padding: $mobilePadding;
+    }
 
     &__content {
         font-size: 1.25em;

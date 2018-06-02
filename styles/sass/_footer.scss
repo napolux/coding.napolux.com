@@ -11,7 +11,10 @@
         }
     }
     &__top, &__bottom {
-        padding: 2.8em;
+        padding: $desktopPadding;
+        @include breakpoint($xs) {
+            padding: $mobilePadding;
+        }
         &-content {
             color: $white;
             &-intro {
