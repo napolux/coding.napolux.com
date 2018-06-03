@@ -2,7 +2,11 @@
     &__header {
         margin-bottom: 2em;
         h1 {
+            line-height: 1.10em;
             color: $grey1;
+            @include breakpoint($xs) {
+
+            }
         }
     }
 

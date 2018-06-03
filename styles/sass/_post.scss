@@ -7,6 +7,11 @@
         font-size: 1.5em;
         margin: 0.5em;
         margin-bottom: 3em;
+        @include breakpoint($xs) {
+            margin-bottom: 0.5em;
+            text-align: left;
+            margin: 0;
+        }
     }
     &-title {
         font-size: 2.5em;
@@ -14,11 +19,18 @@
         text-align: center;
         line-height: 1.10em;
         color: $onlyColor;
+        @include breakpoint($xs) {
+            text-align: left;
+        }
     }
     &-comments, &-sharing {
         color: $grey1;
         font-size: 1.5em;
         line-height: 1.10em;
+        @include breakpoint($xs) {
+            font-size: 1em;
+        }
+
         a {
             color: $onlyColor;
             text-decoration: none;
@@ -44,6 +56,11 @@
             padding-left: 1em;
             color: $grey2;
             font-style: italic;
+            @include breakpoint($xs) {
+                border-left: 3px solid $onlyColor;
+                margin-left: 0;
+                padding-left: 1em;
+            }
         }
     }
     &__meta {
