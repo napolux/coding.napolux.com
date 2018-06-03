@@ -1,4 +1,11 @@
 .loop {
+    &__header {
+        margin-bottom: 2em;
+        h1 {
+
+        }
+    }
+
     &__post {
         margin-bottom: 3em;
         &-date {
@@ -9,6 +16,7 @@
         &-title {
             font-size: 2em;
             text-transform: capitalize;
+            line-height: 1.10em;
             a {
                 color: $onlyColor;
                 text-decoration: none;
@@ -21,6 +29,9 @@
             color: $grey3;
         }
         &__meta {
+            font-size: 0.666em;
+            line-height: 1.25em;
+            text-transform: uppercase;
             &-categories, &-tags {
                 color: $grey2;
             }

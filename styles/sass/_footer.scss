@@ -1,6 +1,8 @@
 .footer {
     a {
         color: $onlyColor;
+        line-height: 1.25em;
+        text-transform: capitalize;
         text-decoration: none;
         &:hover {
             text-decoration: underline;
