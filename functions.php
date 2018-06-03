@@ -19,61 +19,17 @@ function cn_load_scripts()
     wp_enqueue_script('jquery');
 }
 
-add_action('comment_form_before', 'cn_enqueue_comment_reply_script');
-function cn_enqueue_comment_reply_script()
-{
-    if (get_option('thread_comments')) {
-        wp_enqueue_script('comment-reply');
-    }
-}
-
-add_filter('the_title', 'cn_title');
-function cn_title($title)
-{
-    if ($title == '') {
-        return '&rarr;';
-    } else {
-        return $title;
-    }
-}
-
-add_filter('wp_title', 'cn_filter_wp_title');
-function cn_filter_wp_title($title)
-{
-    return $title . esc_attr(get_bloginfo('name'));
-}
-
 add_action('widgets_init', 'cn_widgets_init');
 function cn_widgets_init()
 {
     register_sidebar(array(
-        'name' => __('Sidebar Widget Area', 'cn'),
-        'id' => 'primary-widget-area',
+        'name' => __('Footer Widget Area', 'cn'),
+        'id' => 'footer-widget-area',
         'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
         'after_widget' => "</li>",
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
     ));
-}
-
-function cn_custom_pings($comment)
-{
-    $GLOBALS['comment'] = $comment;
-    ?>
-    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?></li>
-    <?php
-}
-
-add_filter('get_comments_number', 'cn_comments_number');
-function cn_comments_number($count)
-{
-    if (!is_admin()) {
-        global $id;
-        $comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
-        return count($comments_by_type['comment']);
-    } else {
-        return $count;
-    }
 }
 
 function get_random_post() {

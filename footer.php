@@ -21,6 +21,7 @@
             Made with <a href="https://wordpress.org" title="WordPress">WordPress</a>.</p>
         </div>
     </div>
+    <div class="footer__widget" id="footer-widget-area"></div>
 </footer>
 <?php wp_footer(); ?>
 </body>
