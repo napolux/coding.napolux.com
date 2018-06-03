@@ -1,0 +1,21 @@
+.nav {
+    &__below {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        &-next, &-previous {
+            width: 50%;
+            a {
+                text-decoration: none;
+                font-weight: bold;
+                color: $onlyColor;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        &-next {
+            text-align: right;
+        }
+    }
+}

@@ -12,7 +12,7 @@
             <?php if(is_home()) { ?>
                 <h1><?php echo esc_html(get_bloginfo('name')); ?></h1>
                 <p><?php bloginfo('description'); ?></p>
-            <?php } else { ?>
+            <?php } else if(!is_single()) { ?>
                 <h2><?php echo esc_html(get_bloginfo('name')); ?></h2>
                 <p><?php bloginfo('description'); ?></p>
             <?php } ?>

@@ -1,0 +1,65 @@
+.post {
+    margin-bottom: 3em;
+    &-date {
+        color: $grey1;
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.5em;
+        margin: 0.5em;
+    }
+    &-title {
+        font-size: 2.5em;
+        text-transform: capitalize;
+        text-align: center;
+        line-height: 1.10em;
+        color: $onlyColor;
+    }
+    &-comments, &-sharing {
+        color: $grey1;
+        font-size: 1.5em;
+        line-height: 1.10em;
+        a {
+            color: $onlyColor;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &-excerpt {
+        color: $grey3;
+    }
+    &-content {
+        color: $grey3;
+        a {
+            color: $onlyColor;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        blockquote {
+            border-left: 6px solid $onlyColor;
+            padding-left: 1em;
+            color: $grey2;
+            font-style: italic;
+        }
+    }
+    &__meta {
+        font-size: 0.666em;
+        line-height: 1.25em;
+        text-transform: uppercase;
+        &-categories, &-tags {
+            color: $grey2;
+        }
+        a {
+            color: $grey1;
+            text-decoration: none;
+            font-weight: bold;
+            &:hover {
+                text-decoration: underline;
+                color: $onlyColor;
+            }
+        }
+    }
+}
