@@ -2,7 +2,7 @@
     &__header {
         margin-bottom: 2em;
         h1 {
-
+            color: $grey1;
         }
     }
 
@@ -27,6 +27,13 @@
         }
         &-excerpt {
             color: $grey3;
+            a {
+                color: $onlyColor;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
         &__meta {
             font-size: 0.666em;

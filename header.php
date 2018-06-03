@@ -10,10 +10,10 @@
     <header id="header" class="header wrapper serif" role="banner">
         <div class="header__content content">
             <?php if(is_home()) { ?>
-                <h1><?php echo esc_html(get_bloginfo('name')); ?></h1>
+                <h1><a href="<?php echo get_home_url() ?>" title="Beam me up, Scotty!"><?php echo esc_html(get_bloginfo('name')); ?></a></h1>
                 <p><?php bloginfo('description'); ?></p>
-            <?php } else if(!is_single()) { ?>
-                <h2><?php echo esc_html(get_bloginfo('name')); ?></h2>
+            <?php } else if(!is_single() && !is_page()) { ?>
+                <h2><a href="<?php echo get_home_url() ?>" title="Beam me up, Scotty"><?php echo esc_html(get_bloginfo('name')); ?></a></h2>
                 <p><?php bloginfo('description'); ?></p>
             <?php } ?>
         </div>
