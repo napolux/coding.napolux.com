@@ -37,8 +37,12 @@ function get_random_post() {
         'post_type'        => 'post',
         'posts_per_page'   => 1,
         'orderby'          => 'rand',
-        'post_status'      => 'publish',
+        'post_status'      => 'publish'
     ];
+
+    if(is_single()) {
+        $args['post__not_in'] = [get_the_ID()];
+    }
 
     query_posts($args);
 
