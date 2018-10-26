@@ -15,7 +15,6 @@
     }
     &-title {
         font-size: 2.5em;
-        text-transform: capitalize;
         text-align: center;
         line-height: 1.10em;
         color: $onlyColor;
@@ -54,6 +53,7 @@
 
         code {
             font-size: 14px;
+            color: $onlyColor;
         }
         blockquote {
             border-left: 6px solid $onlyColor;
