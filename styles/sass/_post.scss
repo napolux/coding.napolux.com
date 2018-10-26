@@ -51,6 +51,10 @@
                 text-decoration: underline;
             }
         }
+
+        code {
+            font-size: 12px;
+        }
         blockquote {
             border-left: 6px solid $onlyColor;
             padding-left: 1em;
