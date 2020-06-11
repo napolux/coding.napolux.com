@@ -19,6 +19,8 @@
             <p>If you like these tutorials or you think they're useful, <a title="Make me a 3.99€ donation using PayPal" href="https://www.paypal.me/napolux/3.99">you can buy me a coffee using PayPal</a>.</p>
             <p>Please, read the license: <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
             Made with <a href="https://wordpress.org" title="WordPress">WordPress</a>.</p>
+            <p>Theme  
+            <a href="https://github.com/napolux/coding.napolux.com">coding.napolux.com</a> heavily inspired by <a href="https://ruudvanasseldonk.com/writing" target="_blank">Ruud van Asseldonk's website</a>.</p>
         </div>
     </div>
     <div class="footer__widget" id="footer-widget-area">
